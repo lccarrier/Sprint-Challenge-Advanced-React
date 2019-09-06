@@ -1,5 +1,7 @@
 import React from 'react';
 import Players from './Players';
+import styled from 'styled-components'
+import Bubble from './Bubble'
 
 class App extends React.Component {
   state = {
@@ -17,11 +19,21 @@ class App extends React.Component {
     console.log(this.state.data);
     return (
       <div>
-        <h1>Women's World Cup Players</h1>
+        <StyledWrap>
+          <h1>Women's World Cup Players</h1>
+          <Bubble />
+        </StyledWrap>
         <Players data={this.state.data} />
       </div>
     );
   }
 }
+
+
+
+const StyledWrap = styled.div`
+  display: flex;
+  align-items: center;
+`
 
 export default App;
